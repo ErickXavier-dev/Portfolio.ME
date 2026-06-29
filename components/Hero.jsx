@@ -58,7 +58,7 @@ export default function Hero() {
 
         {/* Roles Line */}
         <p className="text-lg md:text-2xl font-mono text-text-muted mb-8 tracking-wide">
-          Full-Stack Engineer <span className="text-accent-primary">·</span> AI/ML <span className="text-accent-primary">·</span> Cybersecurity
+          Full-Stack Engineer <span className="text-accent-primary">·</span> AI/ML
         </p>
 
         {/* CTAs */}

@@ -62,19 +62,19 @@
   }
 }
 
-/* Infinite Horizontal Marquee Scroll Animations */
+/* Infinite Horizontal Marquee Scroll Animations (4x Duplicated for wide viewports) */
 @keyframes marquee-left {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
 }
 
 @keyframes marquee-right {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
   100% {
     transform: translateX(0);
@@ -82,14 +82,14 @@
 }
 
 .animate-marquee-left {
-  animation: marquee-left 35s linear infinite;
+  animation: marquee-left 40s linear infinite;
 }
 
 .animate-marquee-right {
-  animation: marquee-right 35s linear infinite;
+  animation: marquee-right 40s linear infinite;
 }
 
 .mask-fade-edges {
-  mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, white 8%, white 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, white 8%, white 92%, transparent);
 }

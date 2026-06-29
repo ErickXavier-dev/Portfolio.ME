@@ -1,64 +1,54 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { Award, Briefcase, Calendar } from "lucide-react";
+import { 
+  Briefcase, 
+  Calendar, 
+  Sparkles, 
+  Users, 
+  Code, 
+  Cpu, 
+  Monitor, 
+  Trophy 
+} from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 export default function Leadership() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   const timeline = [
     {
       period: "2025–Present",
       role: "Chief Technical Officer",
-      org: "IEDC, Amrita Vishwa Vidyapeetham, Kochi"
+      org: "IEDC, Amrita Vishwa Vidyapeetham, Kochi",
+      icon: Briefcase
     },
     {
       period: "2025",
       role: "Tech Fest Lead & Technical Team Lead",
-      org: "Savishkaara (Amrita TechFest)"
+      org: "Savishkaara (Amrita TechFest)",
+      icon: Sparkles
     },
     {
       period: "2023–2025",
       role: "Founder & Lead",
-      org: "Software Innovators Club, Amrita Kochi"
+      org: "Software Innovators Club, Amrita Kochi",
+      icon: Users
     },
     {
       period: "2024–Present",
       role: "Active Member",
-      org: "CIR Coding Club, Amrita Kochi"
+      org: "CIR Coding Club, Amrita Kochi",
+      icon: Code
     },
     {
       period: "2023",
       role: "Sub Committee Member",
-      org: "IEDC, Amrita Kochi"
+      org: "IEDC, Amrita Kochi",
+      icon: Cpu
     },
     {
       period: "2022–2023",
       role: "Official Member",
-      org: "CSI (Computer Society of India), Amrita Kochi"
+      org: "CSI (Computer Society of India), Amrita Kochi",
+      icon: Monitor
     }
   ];
 
@@ -78,67 +68,83 @@ export default function Leadership() {
   ];
 
   return (
-    <section 
-      id="leadership" 
-      ref={sectionRef}
-      className={`py-24 px-6 max-w-6xl mx-auto border-t border-border transition-all duration-1000 transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      }`}
-    >
+    <section id="leadership" className="py-24 px-6 max-w-6xl mx-auto border-t border-border">
       <div className="flex flex-col items-center mb-16">
-        <span className="font-mono text-xs text-accent-secondary uppercase tracking-widest mb-2">[ 04 . Operations ]</span>
-        <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-text-primary">
-          Leadership & Timeline
-        </h2>
-        <div className="h-0.5 w-12 bg-accent-primary mt-4"></div>
+        <ScrollReveal delay={0.1}>
+          <div className="flex flex-col items-center">
+            <span className="font-mono text-xs text-accent-secondary uppercase tracking-widest mb-2">[ 04 . Operations ]</span>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-text-primary">
+              Leadership & Timeline
+            </h2>
+            <p className="text-sm font-body text-text-muted mt-2 text-center max-w-md">
+              Roles and academic initiatives I have led across campus.
+            </p>
+            <div className="h-0.5 w-12 bg-accent-primary mt-4"></div>
+          </div>
+        </ScrollReveal>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Timeline Block */}
-        <div className="lg:col-span-8 relative pl-6 border-l border-border space-y-8">
-          {timeline.map((item, idx) => (
-            <div key={idx} className="relative group">
-              {/* timeline point dot */}
-              <div className="absolute -left-[31px] top-1.5 w-4 h-4 bg-background border-2 border-border group-hover:border-accent-primary group-hover:bg-accent-primary rounded-full transition-all duration-300"></div>
-              
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
-                <span className="font-mono text-xs text-accent-secondary flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5" />
-                  {item.period}
-                </span>
-              </div>
-              
-              <h3 className="text-lg font-display font-bold text-text-primary group-hover:text-accent-primary transition-colors">
-                {item.role}
-              </h3>
-              <p className="text-sm font-body text-text-muted mt-1">
-                {item.org}
-              </p>
-            </div>
-          ))}
+        <div className="lg:col-span-8 relative pl-8 border-l border-border space-y-10">
+          {timeline.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <ScrollReveal key={idx} delay={0.1 * idx} x={-20} duration={0.8}>
+                <div className="relative group pl-2">
+                  {/* Timeline point dot - Centered perfectly on the line */}
+                  <div className="absolute -left-[45px] top-1.5 w-[34px] h-[34px] bg-background border border-border group-hover:border-accent-primary text-text-muted group-hover:text-accent-primary rounded-full flex items-center justify-center transition-all duration-300 shadow-sm">
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1.5">
+                    <span className="font-mono text-xs text-accent-secondary flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5" />
+                      {item.period}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-lg font-display font-bold text-text-primary group-hover:text-accent-primary transition-colors">
+                    {item.role}
+                  </h3>
+                  <p className="text-sm font-body text-text-muted mt-1">
+                    {item.org}
+                  </p>
+                </div>
+              </ScrollReveal>
+            );
+          })}
         </div>
 
         {/* Awards Block */}
         <div className="lg:col-span-4 flex flex-col justify-start">
-          <div className="p-6 bg-surface border border-border rounded">
-            <h3 className="text-lg font-display font-bold text-text-primary mb-6 flex items-center gap-2">
-              <Award className="w-5 h-5 text-accent-primary" />
-              <span>Key Recognitions</span>
-            </h3>
-            
-            <div className="space-y-4">
-              {awards.map((award, idx) => (
-                <div key={idx} className="border-b border-border/50 last:border-0 pb-4 last:pb-0">
-                  <h4 className="text-sm font-display font-bold text-text-primary">
-                    {award.title}
-                  </h4>
-                  <p className="text-xs font-mono text-text-muted mt-1">
-                    {award.issuer}
-                  </p>
-                </div>
-              ))}
+          <ScrollReveal delay={0.3} y={30}>
+            <div className="p-6 bg-surface border border-border rounded-xl">
+              <h3 className="text-lg font-display font-bold text-text-primary mb-6 flex items-center gap-2">
+                <Trophy className="w-5 h-5 text-accent-primary" />
+                <span>Key Recognitions</span>
+              </h3>
+              
+              <div className="space-y-5">
+                {awards.map((award, idx) => (
+                  <div key={idx} className="flex gap-3 border-b border-border/40 last:border-0 pb-4 last:pb-0">
+                    <div className="p-2 rounded bg-background border border-border text-accent-yellow shrink-0 self-start">
+                      <Trophy className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-display font-bold text-text-primary leading-tight">
+                        {award.title}
+                      </h4>
+                      <p className="text-xs font-mono text-text-muted mt-1 flex items-center gap-1">
+                        <Calendar className="w-3 h-3 text-accent-secondary" />
+                        {award.issuer}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

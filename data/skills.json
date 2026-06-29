@@ -16,22 +16,22 @@
   },
   {
     "category": "Databases",
-    "skills": ["MongoDB", "MySQL", "PostgreSQL", "Oracle"],
+    "skills": ["MongoDB", "MySQL", "Oracle"],
     "color": "#7A8099"
   },
   {
     "category": "AI/ML",
-    "skills": ["PyTorch", "Keras", "LSTM", "RAG", "LangChain", "Hugging Face"],
+    "skills": ["PyTorch", "Keras", "LSTM", "RAG", "LangChain", "Ollama"],
     "color": "#6C63FF"
   },
   {
     "category": "Security",
-    "skills": ["Penetration Testing", "Burp Suite", "JWT/RBAC", "Zero-Trust", "NoSQL Defense"],
+    "skills": ["JWT/RBAC", "Zero-Trust", "NoSQL Defense"],
     "color": "#FF6B6B"
   },
   {
     "category": "Cloud/DevOps",
-    "skills": ["Azure", "Microsoft 365", "Power Automate", "Cloudflare Tunnel", "PM2"],
+    "skills": ["Azure", "Microsoft 365", "Power Automate", "Cloudflare Tunnel", "PM2", "Docker"],
     "color": "#7A8099"
   },
   {
@@ -41,7 +41,7 @@
   },
   {
     "category": "Tools",
-    "skills": ["Git", "Postman", "VS Code", "VirtualBox"],
+    "skills": ["Git", "Postman", "VS Code", "Android Studio", "VirtualBox", "VMware"],
     "color": "#7A8099"
   }
 ]

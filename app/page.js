@@ -5,6 +5,7 @@ import Projects from "@/components/Projects";
 import Leadership from "@/components/Leadership";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Leadership />
       <Certifications />
       <Contact />
+      <Footer />
     </main>
   );
 }
