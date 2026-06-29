@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Python for Data Science, AI & Development",
+    "issuer": "IBM",
+    "date": "Aug 2025"
+  },
+  {
+    "name": "Cyber Job Simulation",
+    "issuer": "Deloitte",
+    "date": "Jun 2025"
+  },
+  {
+    "name": "Data Analytics Job Simulation",
+    "issuer": "Deloitte",
+    "date": "Jun 2025"
+  },
+  {
+    "name": "Problem Solving (Basic)",
+    "issuer": "HackerRank",
+    "date": "Mar 2026"
+  },
+  {
+    "name": "Python (Basic)",
+    "issuer": "HackerRank",
+    "date": "Mar 2026"
+  },
+  {
+    "name": "Introduction to Deep Learning",
+    "issuer": "Infosys",
+    "date": "Jan 2024"
+  }
+]

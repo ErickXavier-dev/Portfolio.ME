@@ -1,0 +1,47 @@
+[
+  {
+    "category": "Languages",
+    "skills": ["Python", "Java", "C", "JavaScript", "TypeScript"],
+    "color": "#7A8099"
+  },
+  {
+    "category": "Frontend",
+    "skills": ["React", "Next.js", "Tailwind CSS", "HTML/CSS"],
+    "color": "#00D4AA"
+  },
+  {
+    "category": "Backend",
+    "skills": ["Node.js", "Express.js", "FastAPI", "Django"],
+    "color": "#F9CA24"
+  },
+  {
+    "category": "Databases",
+    "skills": ["MongoDB", "MySQL", "PostgreSQL", "Oracle"],
+    "color": "#7A8099"
+  },
+  {
+    "category": "AI/ML",
+    "skills": ["PyTorch", "Keras", "LSTM", "RAG", "LangChain", "Hugging Face"],
+    "color": "#6C63FF"
+  },
+  {
+    "category": "Security",
+    "skills": ["Penetration Testing", "Burp Suite", "JWT/RBAC", "Zero-Trust", "NoSQL Defense"],
+    "color": "#FF6B6B"
+  },
+  {
+    "category": "Cloud/DevOps",
+    "skills": ["Azure", "Microsoft 365", "Power Automate", "Cloudflare Tunnel", "PM2"],
+    "color": "#7A8099"
+  },
+  {
+    "category": "Embedded",
+    "skills": ["ESP32", "C/C++", "Arduino", "IoT Sensors"],
+    "color": "#A29BFE"
+  },
+  {
+    "category": "Tools",
+    "skills": ["Git", "Postman", "VS Code", "VirtualBox"],
+    "color": "#7A8099"
+  }
+]

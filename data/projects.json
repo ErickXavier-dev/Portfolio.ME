@@ -1,0 +1,70 @@
+[
+  {
+    "id": "qr-attendance",
+    "title": "QR Attendance System (Temple Fest)",
+    "status": "completed",
+    "visibility": "public",
+    "stack": ["React", "Vite", "Express.js", "MongoDB Atlas", "JWT", "Cloudflare Tunnel", "PM2"],
+    "oneLiner": "Enterprise-grade QR check-in/check-out system for Amrita Kochi's Temple Fest — Zero-Trust RBAC, real-time analytics dashboard, and sub-second scanning for high-throughput event environments.",
+    "highlights": [
+      "Zero-Trust architecture with role-tiered access (Admin / Head / Member)",
+      "NoSQL injection defenses + cryptographic JWT token versioning",
+      "Live KPI dashboard, CSV export, automated DB backup with atomic restore",
+      "Deployed via Cloudflare Tunnel on campus VPS with PM2 cluster management"
+    ]
+  },
+  {
+    "id": "cws",
+    "title": "CWS (Centralized Workspace System)",
+    "status": "in_progress",
+    "visibility": "private",
+    "stack": ["Next.js", "Tailwind CSS", "Microsoft EntraID", "Azure", "Power Automate"],
+    "oneLiner": "Institutional workspace platform for Amrita Kochi managing files, resources, tasks, events, and inter-department coordination — replacing fragmented manual workflows across campus.",
+    "highlights": []
+  },
+  {
+    "id": "kochi-metro-rag",
+    "title": "Kochi Metro RAG Chatbot",
+    "status": "in_progress",
+    "visibility": "private",
+    "stack": ["React", "FastAPI", "Ollama (Local LLM)", "Qdrant (Vector DB)", "MongoDB"],
+    "oneLiner": "Internal document intelligence system for Kochi Metro Rail Ltd. — employees query internal documents via natural language using a locally-hosted LLM, with industry-standard security, access controls, and audit logging.",
+    "highlights": []
+  },
+  {
+    "id": "college-campus-automation",
+    "title": "College Campus Automation",
+    "status": "in_progress",
+    "visibility": "private",
+    "stack": ["Microsoft Power Automate", "Azure", "Microsoft 365"],
+    "oneLiner": "Enterprise automation layer for Amrita Kochi campus — automated group membership management across 14 departments, credential expiry monitoring, and structured alert pipelines.",
+    "highlights": []
+  },
+  {
+    "id": "savishkaara-control-panel",
+    "title": "Savishkaara Control Panel",
+    "status": "completed",
+    "visibility": "public",
+    "stack": ["React", "Express.js", "MongoDB"],
+    "oneLiner": "Full operations dashboard for Amrita's annual TechFest — event management, ticketing, participant registration, admin analytics, and canteen billing. Live in production during the fest.",
+    "highlights": []
+  },
+  {
+    "id": "service-saathi",
+    "title": "Service Saathi",
+    "status": "completed",
+    "visibility": "public",
+    "stack": ["Llama 3.2", "RAG", "NER", "WhatsApp API", "Express.js", "MongoDB"],
+    "oneLiner": "WhatsApp AI chatbot for Kerala Akshaya Centres automating government service enquiries using LLM + Named Entity Recognition. Deployed for real government service centres.",
+    "highlights": []
+  },
+  {
+    "id": "smart-desk-assistant",
+    "title": "Smart Desk Assistant",
+    "status": "completed",
+    "visibility": "public",
+    "stack": ["C/C++", "ESP32", "Arduino", "RTC", "Environmental Sensors", "OLED"],
+    "oneLiner": "Portable IoT productivity assistant — OLED display with real-time weather, Wi-Fi/Bluetooth notifications, and environmental monitoring in a compact desk-friendly form factor.",
+    "highlights": []
+  }
+]
