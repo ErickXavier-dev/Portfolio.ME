@@ -28,11 +28,11 @@ export default function Footer() {
 
 
   const navLinks = [
-    { label: "Identity", href: "#about" },
-    { label: "Capabilities", href: "#skills" },
-    { label: "Curated Work", href: "#projects" },
-    { label: "Operations", href: "#leadership" },
-    { label: "Credentials", href: "#certifications" }
+    { label: "About", href: "#about" },
+    { label: "Skills", href: "#skills" },
+    { label: "Projects", href: "#projects" },
+    { label: "Leadership", href: "#leadership" },
+    { label: "Certifications", href: "#certifications" }
   ];
 
   const featuredBuilds = [
