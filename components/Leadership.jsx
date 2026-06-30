@@ -17,7 +17,7 @@ export default function Leadership() {
     {
       period: "2026–Present",
       role: "AI Intern",
-      org: "Kochi Metro Rail Limited (KMRL)",
+      org: "Kochi Metro Rail Ltd. (KMRL)",
       logo: "/images/kmrl-logo.png",
       icon: Briefcase
     },

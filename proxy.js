@@ -26,7 +26,7 @@ export default function proxy(request) {
     scriptSrc,
     `style-src 'self' 'unsafe-inline'`,
     `font-src 'self'`,
-    `img-src 'self' data: https://cdn.simpleicons.org https://api.iconify.design`,
+    `img-src 'self' data: https://cdn.simpleicons.org https://api.iconify.design https://logos.hunter.io`,
     `connect-src 'self'`,
     `media-src 'none'`,
     `object-src 'none'`,
