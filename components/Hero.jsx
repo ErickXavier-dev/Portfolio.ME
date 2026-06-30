@@ -40,7 +40,7 @@ export default function Hero() {
         {/* CTO / Status Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-surface text-xs font-mono text-accent-secondary mb-6">
           <Shield className="w-3.5 h-3.5" />
-          <span>CTO @ IEDC Amrita | MCA AI & Data Science</span>
+          <span>AI Intern @ KMRL | CTO @ IEDC Amrita | MCA AI & Data Science</span>
         </div>
 
         {/* Glitch Name */}

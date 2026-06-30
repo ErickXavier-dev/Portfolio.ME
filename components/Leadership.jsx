@@ -15,11 +15,19 @@ import ScrollReveal from "./ScrollReveal";
 export default function Leadership() {
   const timeline = [
     {
+      period: "2026–Present",
+      role: "AI Intern",
+      org: "Kochi Metro Rail Limited (KMRL)",
+      logo: "/images/kmrl-logo.png",
+      icon: Briefcase
+    },
+    {
       period: "2025–Present",
       role: "Chief Technical Officer",
       org: "IEDC, Amrita Vishwa Vidyapeetham, Kochi",
       icon: Briefcase
     },
+
     {
       period: "2025",
       role: "Tech Fest Lead & Technical Team Lead",
@@ -93,8 +101,17 @@ export default function Leadership() {
               <ScrollReveal key={item.role} delay={0.1} x={-20} duration={0.8}>
                 <div className="relative group pl-2">
                   {/* Timeline point dot - Centered perfectly on the line */}
-                  <div className="absolute -left-[45px] top-1.5 w-[34px] h-[34px] bg-background border border-border group-hover:border-accent-primary text-text-muted group-hover:text-accent-primary rounded-full flex items-center justify-center transition-all duration-300 shadow-sm">
-                    <Icon className="w-4 h-4" />
+                  <div className="absolute -left-[45px] top-1.5 w-[34px] h-[34px] bg-background border border-border group-hover:border-accent-primary text-text-muted group-hover:text-accent-primary rounded-full flex items-center justify-center transition-all duration-300 shadow-sm overflow-hidden p-1.5">
+                    {item.logo ? (
+                      <img
+                        src={item.logo}
+                        alt={`${item.org} Logo`}
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <Icon className="w-4 h-4" />
+                    )}
                   </div>
                   
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1.5">

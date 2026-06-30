@@ -41,7 +41,7 @@ export default function About() {
             </h2>
             
             <p className="text-text-muted font-body leading-relaxed text-base md:text-lg">
-              I'm a full-stack engineer and MCA student at Amrita Vishwa Vidyapeetham, Kochi. I build production-grade systems — AI chatbots for government infrastructure, enterprise workspace platforms, IoT firmware, and cloud automation — not demos. Currently CTO of IEDC Amrita, leading technical operations and shipping real systems for real institutions.
+              I'm a full-stack engineer and MCA student at Amrita Vishwa Vidyapeetham, Kochi. I build production-grade systems — AI chatbots for government infrastructure, enterprise workspace platforms, IoT firmware, and cloud automation — not demos. Currently working as an AI Intern at Kochi Metro Rail Limited (KMRL) and serving as the CTO of IEDC Amrita, leading technical operations and shipping real systems for real institutions.
             </p>
           </ScrollReveal>
         </div>

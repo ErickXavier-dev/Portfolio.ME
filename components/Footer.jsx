@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronUp, Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { ChevronUp, Github, Linkedin, Mail, ArrowUpRight, Twitter, Instagram } from "lucide-react";
 
 export default function Footer() {
   const [emailLink, setEmailLink] = useState("");
@@ -46,6 +46,8 @@ export default function Footer() {
   const socialLinks = [
     { label: "GitHub Profile", href: "https://github.com/ErickXavier-dev" },
     { label: "LinkedIn Connection", href: "https://linkedin.com/in/erickxavier" },
+    { label: "Twitter / X", href: "https://x.com/ErickXavier879" },
+    { label: "Instagram", href: "https://www.instagram.com/erickxavier879" },
     { label: "IEDC Amrita Kochi", href: "https://www.amritaiedc.in/" }
   ];
 
@@ -131,6 +133,24 @@ export default function Footer() {
             >
               <Github className="w-4 h-4" />
             </a>
+            <a
+              href="https://x.com/ErickXavier879"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-surface border border-border rounded-lg text-text-muted hover:text-accent-primary hover:border-accent-primary transition-colors duration-300"
+              title="Twitter / X"
+            >
+              <Twitter className="w-4 h-4" />
+            </a>
+            <a
+              href="https://www.instagram.com/erickxavier879"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-surface border border-border rounded-lg text-text-muted hover:text-accent-primary hover:border-accent-primary transition-colors duration-300"
+              title="Instagram"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
           {emailLink && (
             <a
               href={emailLink}
@@ -174,7 +194,7 @@ export default function Footer() {
       {/* Bottom Section */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
         <p className="text-[11px] md:text-xs font-body text-text-muted text-center md:text-left max-w-lg leading-relaxed">
-          CTO of IEDC Amrita Kochi. Deploys zero-trust applications, local LLMs, and campus automations.
+          AI Intern at KMRL & CTO of IEDC Amrita Kochi. Deploys zero-trust applications, local LLMs, and campus automations.
         </p>
 
         <div className="flex items-center gap-6">

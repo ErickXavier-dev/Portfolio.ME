@@ -126,7 +126,7 @@ export default function OGImage() {
             }}
           />
           <span style={{ color: "#00D4AA", fontSize: "16px", fontFamily: "monospace" }}>
-            CTO @ IEDC Amrita · MCA AI &amp; Data Science
+            AI Intern @ KMRL · CTO @ IEDC Amrita · MCA AI &amp; Data Science
           </span>
         </div>
 

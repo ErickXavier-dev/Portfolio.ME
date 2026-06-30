@@ -1,6 +1,7 @@
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { headers } from "next/headers";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 
@@ -32,7 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   title: "Erick Xavier | Full-Stack Engineer · AI/ML · Cybersecurity",
   description:
-    "CTO @ IEDC Amrita | MCA AI & Data Science student. I build production-grade institutional systems: AI chatbots for government infrastructure, IoT devices, and enterprise platforms.",
+    "AI Intern @ KMRL | CTO @ IEDC Amrita | MCA AI & Data Science student. I build production-grade institutional systems: AI chatbots for government infrastructure, IoT devices, and enterprise platforms.",
   metadataBase: new URL("https://erickxavier.dev"),
 
   // Canonical URL — prevents duplicate-content penalties
@@ -43,7 +44,7 @@ export const metadata = {
   openGraph: {
     title: "Erick Xavier | Full-Stack Engineer",
     description:
-      "CTO @ IEDC Amrita | MCA AI & Data Science student. Builder of enterprise platforms, local-first AI RAG solutions, and secure check-in systems.",
+      "AI Intern @ KMRL | CTO @ IEDC Amrita | MCA AI & Data Science student. Builder of enterprise platforms, local-first AI RAG solutions, and secure check-in systems.",
     url: "https://erickxavier.dev",
     siteName: "Erick Xavier Portfolio",
     locale: "en_US",
@@ -63,7 +64,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Erick Xavier | Full-Stack Engineer · AI/ML",
     description:
-      "CTO @ IEDC Amrita. Building production AI, IoT, and enterprise tools.",
+      "AI Intern @ KMRL & CTO @ IEDC Amrita. Building production AI, IoT, and enterprise tools.",
     creator: "@erickxavier",
     images: ["/opengraph-image"],
   },
@@ -93,10 +94,16 @@ export default async function RootLayout({ children }) {
     "@type": "Person",
     name: "Erick Xavier",
     jobTitle: "Full-Stack Engineer & Chief Technical Officer",
-    worksFor: {
-      "@type": "Organization",
-      name: "IEDC Amrita Vishwa Vidyapeetham, Kochi",
-    },
+    worksFor: [
+      {
+        "@type": "Organization",
+        name: "Kochi Metro Rail Limited (KMRL)",
+      },
+      {
+        "@type": "Organization",
+        name: "IEDC Amrita Vishwa Vidyapeetham, Kochi",
+      },
+    ],
     alumniOf: {
       "@type": "EducationalOrganization",
       name: "Amrita Vishwa Vidyapeetham",
@@ -105,9 +112,11 @@ export default async function RootLayout({ children }) {
     sameAs: [
       "https://github.com/ErickXavier-dev",
       "https://linkedin.com/in/erickxavier",
+      "https://x.com/ErickXavier879",
+      "https://www.instagram.com/erickxavier879",
     ],
     description:
-      "CTO of IEDC Amrita Kochi and founder of Software Innovators Club. Building production AI, IoT, and enterprise tools.",
+      "AI Intern at KMRL, CTO of IEDC Amrita Kochi, and founder of Software Innovators Club. Building production AI, IoT, and enterprise tools.",
   };
 
   return (
@@ -135,6 +144,7 @@ export default async function RootLayout({ children }) {
       <body className="bg-background text-text-primary selection:bg-accent-primary/20">
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
