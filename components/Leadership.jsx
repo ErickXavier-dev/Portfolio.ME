@@ -25,6 +25,7 @@ export default function Leadership() {
       period: "2025–Present",
       role: "Chief Technical Officer",
       org: "IEDC, Amrita Vishwa Vidyapeetham, Kochi",
+      logo: "/images/iedcbgremoved-whiteText.png",
       icon: Briefcase
     },
 
@@ -32,12 +33,14 @@ export default function Leadership() {
       period: "2025",
       role: "Tech Fest Lead & Technical Team Lead",
       org: "Savishkaara (Amrita TechFest)",
+      logo: "/images/savishkaara.PNG",
       icon: Sparkles
     },
     {
       period: "2023–2025",
       role: "Founder & Lead",
       org: "Software Innovators Club, Amrita Kochi",
+      logo: "/images/sicwhite.png",
       icon: Users
     },
     {
@@ -50,12 +53,14 @@ export default function Leadership() {
       period: "2023",
       role: "Sub Committee Member",
       org: "IEDC, Amrita Kochi",
+      logo: "/images/iedcbgremoved-whiteText.png",
       icon: Cpu
     },
     {
       period: "2022–2023",
       role: "Official Member",
       org: "CSI (Computer Society of India), Amrita Kochi",
+      logo: "/images/CSI.PNG",
       icon: Monitor
     }
   ];
