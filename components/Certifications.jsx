@@ -60,7 +60,7 @@ export default function Certifications() {
                     <span className="inline-block px-2.5 py-0.5 rounded bg-background border border-border font-mono text-[10px] text-accent-secondary uppercase tracking-wider">
                       {cert.issuer}
                     </span>
-                    <div className={`w-8 h-8 rounded border flex items-center justify-center p-1.5 ${config.color} group-hover:scale-110 transition-all duration-300`}>
+                    <div className={`w-10 h-10 rounded-lg border flex items-center justify-center p-1 ${config.color} group-hover:scale-110 transition-all duration-300`}>
                       {config.logo ? (
                         <img 
                           src={config.logo} 
