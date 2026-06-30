@@ -142,7 +142,7 @@ export default function Skills() {
           <div className="flex flex-col items-center">
             <span className="font-mono text-xs text-accent-secondary uppercase tracking-widest mb-2">[ 02 . Capabilities ]</span>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-text-primary">
-              Technical Arsenal
+              Technical Skills
             </h2>
             <p className="text-sm font-body text-text-muted mt-2 text-center max-w-md">
               Technologies and tools I use to bring production systems to life.

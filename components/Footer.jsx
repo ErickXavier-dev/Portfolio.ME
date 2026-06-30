@@ -38,7 +38,7 @@ export default function Footer() {
   const featuredBuilds = [
     { label: "QR Attendance System", href: "#projects" },
     { label: "Centralized Workspace", href: "#projects" },
-    { label: "Kochi Metro RAG Bot", href: "#projects" },
+    { label: "KMRL Internal RAG Bot", href: "#projects" },
     { label: "Campus Automation", href: "#projects" },
     { label: "Service Saathi AI", href: "#projects" }
   ];
@@ -46,7 +46,7 @@ export default function Footer() {
   const socialLinks = [
     { label: "GitHub Profile", href: "https://github.com/ErickXavier-dev" },
     { label: "LinkedIn Connection", href: "https://linkedin.com/in/erickxavier" },
-    { label: "IEDC Amrita", href: "#leadership" }
+    { label: "IEDC Amrita Kochi", href: "https://www.amritaiedc.in/" }
   ];
 
   return (

@@ -24,7 +24,7 @@
   },
   {
     "id": "kochi-metro-rag",
-    "title": "Kochi Metro RAG Chatbot",
+    "title": "Kochi Metro Rail Internal RAG Chatbot",
     "status": "in_progress",
     "visibility": "private",
     "stack": ["React", "FastAPI", "Ollama (Local LLM)", "Qdrant (Vector DB)", "MongoDB"],
