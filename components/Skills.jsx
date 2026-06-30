@@ -190,7 +190,9 @@ export default function Skills() {
             return (
               <div key={rowIdx} className="w-full overflow-hidden flex whitespace-nowrap py-2">
                 <div className={`flex gap-6 ${animationClass} shrink-0 pr-6`}>
-                  {Array.from({ length: 4 }).map((_, repeatIdx) => (
+                  {/* 2× duplication is sufficient for the infinite-scroll illusion;
+                   * 4× was doubling DOM nodes unnecessarily. */}
+                  {Array.from({ length: 2 }).map((_, repeatIdx) => (
                     rowSkills.map((skill, sIdx) => {
                       const isMuted = activeCategory !== "All" && skill.category !== activeCategory;
                       const isHighlighted = activeCategory !== "All" && skill.category === activeCategory;

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Prevent crawlers from wasting crawl budget on Next.js internal chunks
+Disallow: /_next/static/
+Disallow: /_next/image/
+
+Sitemap: https://erickxavier.me/sitemap.xml

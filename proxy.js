@@ -17,6 +17,11 @@ export default function proxy(request) {
   // Build a strict Content-Security-Policy.
   // In development, React requires 'unsafe-eval' for HMR and stack traces.
   // In production, it is never included — the nonce is sufficient.
+  if (isDev) {
+    // eslint-disable-next-line no-console
+    console.warn("[CSP] unsafe-eval active — development mode only.");
+  }
+
   const scriptSrc = isDev
     ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval'`
     : `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`;
@@ -24,10 +29,14 @@ export default function proxy(request) {
   const csp = [
     `default-src 'self'`,
     scriptSrc,
+    // 'unsafe-inline' required for Tailwind utility classes and framer-motion inline styles.
     `style-src 'self' 'unsafe-inline'`,
+    // Fonts are self-hosted via next/font — no external font CDN needed.
     `font-src 'self'`,
+    // logos.hunter.io — used for issuer brand logos in Certifications.jsx.
     `img-src 'self' data: https://cdn.simpleicons.org https://api.iconify.design https://logos.hunter.io`,
-    `connect-src 'self'`,
+    // Vercel Analytics + Speed Insights beacon endpoints.
+    `connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com`,
     `media-src 'none'`,
     `object-src 'none'`,
     `frame-ancestors 'none'`,

@@ -145,8 +145,12 @@ export default function ParticleBackground() {
       canvas._logicalH = h;
 
       const area  = w * h;
+      // Cap particles more aggressively on mobile to avoid O(n²) connection-line
+      // cost on low-powered devices (160 particles = 12,720 sqrt ops/frame).
+      const isMobile = w < 768;
+      const mobileMax = 60;
       const count = Math.min(
-        CONFIG.maxParticles,
+        isMobile ? mobileMax : CONFIG.maxParticles,
         Math.max(CONFIG.minParticles, Math.floor(area / CONFIG.particleDensity))
       );
 
@@ -160,8 +164,13 @@ export default function ParticleBackground() {
       state.logicalCanvas = logicalCanvas;
     };
 
+    // ── Resize (debounced) ────────────────────────────────────────────────
+    // Without debouncing, rapid resize events recreate all particles dozens
+    // of times per second, causing jank.
+    let resizeTimer;
     const ro = new ResizeObserver(() => {
-      resize();
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 150);
     });
     ro.observe(canvas);
     resize();
@@ -267,7 +276,9 @@ export default function ParticleBackground() {
       className="fixed inset-0 w-full h-full pointer-events-none"
       style={{
         zIndex: 0,
-        willChange: "transform", // hint: promote to own compositor layer
+        // willChange: 'transform' has no effect on a canvas redrawn via
+        // clearRect — the canvas manages its own pixel buffer. Removed to
+        // avoid unnecessary GPU layer promotion and memory overhead.
       }}
     />
   );

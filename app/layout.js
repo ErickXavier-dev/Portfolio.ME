@@ -34,24 +34,26 @@ export const metadata = {
   title: "Erick Xavier | Full-Stack Engineer · AI/ML · Cybersecurity",
   description:
     "AI Intern @ KMRL | CTO @ IEDC Amrita | MCA AI & Data Science student. I build production-grade institutional systems: AI chatbots for government infrastructure, IoT devices, and enterprise platforms.",
-  metadataBase: new URL("https://erickxavier.dev"),
+  metadataBase: new URL("https://erickxavier.me"),
 
   // Canonical URL — prevents duplicate-content penalties
   alternates: {
-    canonical: "https://erickxavier.dev",
+    canonical: "https://erickxavier.me",
   },
 
   openGraph: {
     title: "Erick Xavier | Full-Stack Engineer",
     description:
       "AI Intern @ KMRL | CTO @ IEDC Amrita | MCA AI & Data Science student. Builder of enterprise platforms, local-first AI RAG solutions, and secure check-in systems.",
-    url: "https://erickxavier.dev",
+    url: "https://erickxavier.me",
     siteName: "Erick Xavier Portfolio",
-    locale: "en_US",
+    // en_IN — primary audience is Indian institutions and recruiters
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
+        // Absolute URL — LinkedIn/Slack scrapers don't always resolve relative paths
+        url: "https://erickxavier.me/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Erick Xavier — Full-Stack Engineer · AI/ML · Cybersecurity",
@@ -89,11 +91,14 @@ export default async function RootLayout({ children }) {
   const nonce = (await headers()).get("x-nonce") ?? "";
 
   // Structured data (JSON-LD) — Person schema
+  // Enhanced for Google Knowledge Panel eligibility
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Erick Xavier",
     jobTitle: "Full-Stack Engineer & Chief Technical Officer",
+    // OG image — used by Google for Knowledge Panel profile photo
+    image: "https://erickxavier.me/opengraph-image",
     worksFor: [
       {
         "@type": "Organization",
@@ -108,7 +113,25 @@ export default async function RootLayout({ children }) {
       "@type": "EducationalOrganization",
       name: "Amrita Vishwa Vidyapeetham",
     },
-    url: "https://erickxavier.dev",
+    // Local address — boosts visibility in India-based recruiter searches
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Kochi",
+      addressRegion: "Kerala",
+      addressCountry: "IN",
+    },
+    // knowsAbout — reinforces topic authority for these domains in search
+    knowsAbout: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Full-Stack Web Development",
+      "Cybersecurity",
+      "Internet of Things",
+      "Retrieval-Augmented Generation",
+      "Cloud Computing",
+      "Enterprise Software",
+    ],
+    url: "https://erickxavier.me",
     sameAs: [
       "https://github.com/ErickXavier-dev",
       "https://linkedin.com/in/erickxavier",

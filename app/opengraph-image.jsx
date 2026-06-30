@@ -141,7 +141,7 @@ export default function OGImage() {
             fontFamily: "monospace",
           }}
         >
-          erickxavier.dev
+          erickxavier.me
         </div>
       </div>
     ),

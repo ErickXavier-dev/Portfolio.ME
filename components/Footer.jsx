@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { ChevronUp, Github, Linkedin, Mail, ArrowUpRight, Twitter, Instagram } from "lucide-react";
-import { version } from "../package.json";
+
+// Version sourced from env var — avoids bundling package.json into client bundle
+const appVersion = process.env.NEXT_PUBLIC_VERSION ?? "1.0";
 
 export default function Footer() {
   const [emailLink, setEmailLink] = useState("");
@@ -15,12 +17,14 @@ export default function Footer() {
     setEmailLink(`mailto:${email}`);
     setVisibleEmail(email);
 
-    // Developer Easter egg log
-    console.log(
-      `%c Erick Xavier Portfolio v${version} %c https://github.com/ErickXavier-dev/Portfolio.ME `,
-      "color: #fff; background: #6c63ff; padding: 5px 0; border-radius: 5px 0 0 5px; font-weight: bold;",
-      "color: #6c63ff; background: #1e1e3f; padding: 5px 0; border-radius: 0 5px 5px 0;"
-    );
+    // Developer Easter egg log — only in development, not production
+    if (process.env.NODE_ENV === "development") {
+      console.log(
+        `%c Erick Xavier Portfolio v${appVersion} %c https://github.com/ErickXavier-dev/Portfolio.ME `,
+        "color: #fff; background: #6c63ff; padding: 5px 0; border-radius: 5px 0 0 5px; font-weight: bold;",
+        "color: #6c63ff; background: #1e1e3f; padding: 5px 0; border-radius: 0 5px 5px 0;"
+      );
+    }
   }, []);
 
   const scrollToTop = () => {
@@ -221,7 +225,7 @@ export default function Footer() {
               &copy; 2026 Erick Xavier · All rights reserved.
             </p>
             <p className="text-[10px] font-mono text-text-muted/50">
-              v{version}
+              v{appVersion}
             </p>
           </div>
         </div>

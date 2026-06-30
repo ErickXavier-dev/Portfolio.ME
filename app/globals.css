@@ -68,13 +68,14 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-25%);
+    /* -50% = one full copy width; matches 2× duplication in Skills.jsx */
+    transform: translateX(-50%);
   }
 }
 
 @keyframes marquee-right {
   0% {
-    transform: translateX(-25%);
+    transform: translateX(-50%);
   }
   100% {
     transform: translateX(0);

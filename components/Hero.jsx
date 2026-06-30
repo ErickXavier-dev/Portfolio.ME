@@ -47,8 +47,10 @@ export default function Hero() {
         <h1
           id="page-heading"
           tabIndex={-1}
-          className={`text-5xl md:text-8xl font-display font-bold tracking-tight mb-4 select-none focus:outline-none ${
-            glitching ? "animate-glitch text-accent-primary" : "text-text-primary"
+          className={`text-5xl md:text-8xl font-display font-bold tracking-tight mb-4 focus:outline-none ${
+            glitching
+              ? "animate-glitch text-accent-primary select-none"
+              : "text-text-primary"
           }`}
           style={{
             fontFamily: "var(--font-space-grotesk)",
