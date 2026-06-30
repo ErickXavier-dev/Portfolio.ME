@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "autoprefixer": "10.4.19",
     "framer-motion": "^12.42.0",
     "lucide-react": "0.395.0",

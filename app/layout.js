@@ -1,6 +1,8 @@
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { headers } from "next/headers";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
+
 
 // ── Self-hosted fonts via next/font ────────────────────────────────────────
 // These are downloaded at build time and served from your own domain —
@@ -132,6 +134,7 @@ export default async function RootLayout({ children }) {
       </head>
       <body className="bg-background text-text-primary selection:bg-accent-primary/20">
         {children}
+        <Analytics />
       </body>
     </html>
   );
