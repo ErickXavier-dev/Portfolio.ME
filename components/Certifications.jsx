@@ -8,20 +8,20 @@ export default function Certifications() {
   // Map brand/issuer to customized Lucide icons and colors
   const issuerConfigs = {
     "IBM": { 
-      icon: Cpu, 
-      color: "text-accent-primary bg-accent-primary/10 border-accent-primary/20" 
+      logo: "https://logos.hunter.io/ibm.com",
+      color: "bg-[#0f62fe]/10 border-[#0f62fe]/20" 
     },
     "Deloitte": { 
-      icon: ShieldCheck, 
-      color: "text-accent-secondary bg-accent-secondary/10 border-accent-secondary/20" 
+      logo: "https://logos.hunter.io/deloitte.com",
+      color: "bg-[#86bc25]/10 border-[#86bc25]/20" 
     },
     "HackerRank": { 
-      icon: Code, 
-      color: "text-accent-yellow bg-accent-yellow/10 border-accent-yellow/20" 
+      logo: "https://logos.hunter.io/hackerrank.com",
+      color: "bg-[#2ec866]/10 border-[#2ec866]/20" 
     },
     "Infosys": { 
-      icon: BookOpen, 
-      color: "text-accent-violet bg-accent-violet/10 border-accent-violet/20" 
+      logo: "https://logos.hunter.io/infosys.com",
+      color: "bg-[#007cc3]/10 border-[#007cc3]/20" 
     }
   };
 
@@ -48,7 +48,7 @@ export default function Certifications() {
             icon: Award,
             color: "text-text-muted bg-surface border-border"
           };
-          const Icon = config.icon;
+          const Icon = config.icon || Award;
 
           return (
             <ScrollReveal key={cert.name} delay={0.1} y={30} duration={0.8}>
@@ -60,8 +60,17 @@ export default function Certifications() {
                     <span className="inline-block px-2.5 py-0.5 rounded bg-background border border-border font-mono text-[10px] text-accent-secondary uppercase tracking-wider">
                       {cert.issuer}
                     </span>
-                    <div className={`p-2 rounded border ${config.color} group-hover:scale-110 transition-transform`}>
-                      <Icon className="w-4 h-4" />
+                    <div className={`w-8 h-8 rounded border flex items-center justify-center p-1.5 ${config.color} group-hover:scale-110 transition-all duration-300`}>
+                      {config.logo ? (
+                        <img 
+                          src={config.logo} 
+                          alt={`${cert.issuer} logo`}
+                          className="w-full h-full object-contain"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <Icon className="w-4 h-4" />
+                      )}
                     </div>
                   </div>
                   
