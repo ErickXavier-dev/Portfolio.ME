@@ -110,22 +110,28 @@ export default function Skills() {
       return (
         <img
           src={url}
-          alt={`${skillName} logo`}
+          alt=""
+          aria-hidden="true"
+          width={16}
+          height={16}
+          loading="lazy"
+          decoding="async"
           className="w-4 h-4 object-contain brightness-110 contrast-125 transition-transform group-hover:scale-115 shrink-0"
           onError={(e) => {
-            e.target.style.display = "none";
+            e.currentTarget.style.display = "none";
           }}
         />
       );
     }
-    
-    // Concept Lucide fallbacks
+
+    // Concept Lucide fallbacks (for skills with no CDN icon)
     const conceptIcons = {
       "NoSQL Defense": Shield,
     };
     const Icon = conceptIcons[skillName] || Code;
     return <Icon className="w-4 h-4 shrink-0" style={{ color }} />;
   };
+
 
   const categories = ["All", ...skillsData.map((cat) => cat.category)];
 
@@ -163,6 +169,7 @@ export default function Skills() {
               <button
                 onClick={() => setActiveCategory(cat)}
                 style={activeStyle}
+                aria-pressed={cat === activeCategory}
                 className="px-3 py-1.5 rounded font-mono text-xs border border-border bg-surface text-text-muted hover:text-text-primary hover:border-text-muted transition-all duration-300"
               >
                 {cat}
@@ -187,10 +194,14 @@ export default function Skills() {
                     rowSkills.map((skill, sIdx) => {
                       const isMuted = activeCategory !== "All" && skill.category !== activeCategory;
                       const isHighlighted = activeCategory !== "All" && skill.category === activeCategory;
+                      // Only the first repetition is visible to screen readers;
+                      // duplicates are purely decorative for the infinite-scroll illusion.
+                      const isDecorative = repeatIdx > 0;
 
                       return (
                         <div
                           key={`${repeatIdx}-${sIdx}`}
+                          aria-hidden={isDecorative ? "true" : undefined}
                           style={{
                             borderColor: isHighlighted ? skill.color : "var(--color-border, #1E2330)",
                             boxShadow: isHighlighted ? `0 0 16px ${skill.color}35` : "none",

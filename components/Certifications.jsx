@@ -1,8 +1,8 @@
-"use client";
-
+// Server Component — no hooks or browser APIs needed here.
 import { Cpu, ShieldCheck, Code, BookOpen, Calendar, Award } from "lucide-react";
 import certificationsData from "../data/certifications.json";
 import ScrollReveal from "./ScrollReveal";
+
 
 export default function Certifications() {
   // Map brand/issuer to customized Lucide icons and colors
@@ -26,12 +26,12 @@ export default function Certifications() {
   };
 
   return (
-    <section id="certifications" className="py-24 px-6 max-w-6xl mx-auto border-t border-border">
+    <section id="certifications" aria-labelledby="certifications-heading" className="py-24 px-6 max-w-6xl mx-auto border-t border-border">
       <div className="flex flex-col items-center mb-16">
         <ScrollReveal delay={0.1}>
           <div className="flex flex-col items-center">
             <span className="font-mono text-xs text-accent-secondary uppercase tracking-widest mb-2">[ 05 . Credentials ]</span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-text-primary">
+            <h2 id="certifications-heading" className="text-3xl md:text-4xl font-display font-bold text-center text-text-primary">
               Certifications
             </h2>
             <p className="text-sm font-body text-text-muted mt-2 text-center max-w-md">
@@ -43,15 +43,15 @@ export default function Certifications() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {certificationsData.map((cert, idx) => {
-          const config = issuerConfigs[cert.issuer] || { 
-            icon: Award, 
-            color: "text-text-muted bg-surface border-border" 
+        {certificationsData.map((cert) => {
+          const config = issuerConfigs[cert.issuer] || {
+            icon: Award,
+            color: "text-text-muted bg-surface border-border"
           };
           const Icon = config.icon;
 
           return (
-            <ScrollReveal key={idx} delay={0.1 * idx} y={30} duration={0.8}>
+            <ScrollReveal key={cert.name} delay={0.1} y={30} duration={0.8}>
               <div 
                 className="h-full p-6 bg-surface border border-border rounded-xl flex flex-col justify-between hover:border-accent-primary hover:-translate-y-1 transition-all duration-300 group"
               >

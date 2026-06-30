@@ -1,7 +1,7 @@
-"use client";
-
+// Server Component — no hooks or browser APIs needed here.
 import { Terminal, Lock, Crown } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+
 
 export default function About() {
   const stats = [
@@ -26,7 +26,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 px-6 max-w-6xl mx-auto border-t border-border">
+    <section id="about" aria-labelledby="about-heading" className="py-24 px-6 max-w-6xl mx-auto border-t border-border">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         {/* Left Bio Column */}
         <div className="md:col-span-7">
@@ -36,7 +36,7 @@ export default function About() {
               <div className="h-px flex-1 bg-border"></div>
             </div>
             
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 text-text-primary">
+            <h2 id="about-heading" className="text-3xl md:text-4xl font-display font-bold mb-6 text-text-primary">
               Building Systems That Run At Scale
             </h2>
             

@@ -29,10 +29,9 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-between items-center px-6 pt-24 pb-8 bg-background overflow-hidden">
-      {/* Grid Dot Background overlay */}
-      <div className="absolute inset-0 bg-grid-dots pointer-events-none opacity-40"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background pointer-events-none"></div>
+    <section aria-labelledby="page-heading" className="relative min-h-screen flex flex-col justify-between items-center px-6 pt-24 pb-8 bg-background overflow-hidden">
+      {/* Subtle gradient so particles remain visible but text stays legible */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none"></div>
 
       {/* Top element to push center content down */}
       <div className="h-4"></div>
@@ -45,8 +44,10 @@ export default function Hero() {
         </div>
 
         {/* Glitch Name */}
-        <h1 
-          className={`text-5xl md:text-8xl font-display font-bold tracking-tight mb-4 select-none ${
+        <h1
+          id="page-heading"
+          tabIndex={-1}
+          className={`text-5xl md:text-8xl font-display font-bold tracking-tight mb-4 select-none focus:outline-none ${
             glitching ? "animate-glitch text-accent-primary" : "text-text-primary"
           }`}
           style={{

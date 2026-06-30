@@ -1,0 +1,44 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["jsx-a11y"],
+  "rules": {
+    // ── Accessibility ──────────────────────────────────────────────────────
+    // Enforce rel="noopener noreferrer" on all target="_blank" links
+    "react/jsx-no-target-blank": ["error", { "allowReferrer": false }],
+
+    // Require alt text on all images (we use aria-hidden="" on decorative ones)
+    "jsx-a11y/alt-text": "error",
+
+    // Interactive elements must be focusable and have accessible labels
+    "jsx-a11y/interactive-supports-focus": "error",
+    "jsx-a11y/click-events-have-key-events": "warn",
+
+    // Anchor tags must have accessible content
+    "jsx-a11y/anchor-has-content": "error",
+
+    // aria-* attributes must be valid
+    "jsx-a11y/aria-props": "error",
+    "jsx-a11y/aria-proptypes": "error",
+    "jsx-a11y/aria-unsupported-elements": "error",
+
+    // Role values must be valid
+    "jsx-a11y/aria-role": "error",
+
+    // ── React Hooks ────────────────────────────────────────────────────────
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+
+    // ── General quality ────────────────────────────────────────────────────
+    // Warn on console.log left in production code
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+
+    // Disallow use of eval() — we removed it from CSP too
+    "no-eval": "error",
+
+    // Disallow implied eval (setTimeout with string arg, etc.)
+    "no-implied-eval": "error"
+  }
+}

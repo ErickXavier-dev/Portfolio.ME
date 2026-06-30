@@ -18,5 +18,8 @@
     "react-dom": "^19.2.7",
     "simple-icons": "^16.24.1",
     "tailwindcss": "3.4.4"
+  },
+  "devDependencies": {
+    "eslint-plugin-jsx-a11y": "^6.10.2"
   }
 }

@@ -1,11 +1,31 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { ChevronUp, Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
+  const [emailLink, setEmailLink] = useState("");
+  const [visibleEmail, setVisibleEmail] = useState("");
+
+  // De-obfuscate email client-side only — keeps plaintext out of HTML source
+  useEffect(() => {
+    const parts = ["xaviererick879", "gmail.com"];
+    const email = parts.join("@");
+    setEmailLink(`mailto:${email}`);
+    setVisibleEmail(email);
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    // Return focus to the page heading for keyboard / screen-reader users
+    // Small delay lets the scroll complete before focus moves
+    setTimeout(() => {
+      const heading = document.getElementById("page-heading") ||
+                      document.querySelector("h1");
+      if (heading) heading.focus();
+    }, 600);
   };
+
 
   const navLinks = [
     { label: "Identity", href: "#about" },
@@ -111,20 +131,29 @@ export default function Footer() {
             >
               <Github className="w-4 h-4" />
             </a>
+          {emailLink && (
             <a
-              href="mailto:xaviererick879@gmail.com"
+              href={emailLink}
               className="p-2 bg-surface border border-border rounded-lg text-text-muted hover:text-accent-primary hover:border-accent-primary transition-colors duration-300"
+              aria-label="Send email"
               title="Email"
             >
               <Mail className="w-4 h-4" />
             </a>
+          )}
           </div>
-          <a
-            href="mailto:xaviererick879@gmail.com"
-            className="text-sm font-mono text-text-muted hover:text-accent-secondary transition-colors block break-all font-semibold"
-          >
-            xaviererick879@gmail.com
-          </a>
+          {visibleEmail ? (
+            <a
+              href={emailLink}
+              className="text-sm font-mono text-text-muted hover:text-accent-secondary transition-colors block break-all font-semibold"
+            >
+              {visibleEmail}
+            </a>
+          ) : (
+            <span className="text-sm font-mono text-text-muted block break-all font-semibold opacity-50 select-none">
+              ████████████████
+            </span>
+          )}
         </div>
 
         {/* Brand Column */}
@@ -153,6 +182,7 @@ export default function Footer() {
           <button
             onClick={scrollToTop}
             className="p-2.5 bg-accent-primary hover:bg-accent-primary/80 text-background border border-accent-primary rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_16px_rgba(108,99,255,0.2)]"
+            aria-label="Back to top"
             title="Back to Top"
           >
             <ChevronUp className="w-4 h-4 stroke-[3px]" />

@@ -1,16 +1,16 @@
-"use client";
-
-import { 
-  Briefcase, 
-  Calendar, 
-  Sparkles, 
-  Users, 
-  Code, 
-  Cpu, 
-  Monitor, 
-  Trophy 
+// Server Component — no hooks or browser APIs needed here.
+import {
+  Briefcase,
+  Calendar,
+  Sparkles,
+  Users,
+  Code,
+  Cpu,
+  Monitor,
+  Trophy
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+
 
 export default function Leadership() {
   const timeline = [
@@ -68,12 +68,12 @@ export default function Leadership() {
   ];
 
   return (
-    <section id="leadership" className="py-24 px-6 max-w-6xl mx-auto border-t border-border">
+    <section id="leadership" aria-labelledby="leadership-heading" className="py-24 px-6 max-w-6xl mx-auto border-t border-border">
       <div className="flex flex-col items-center mb-16">
         <ScrollReveal delay={0.1}>
           <div className="flex flex-col items-center">
             <span className="font-mono text-xs text-accent-secondary uppercase tracking-widest mb-2">[ 04 . Operations ]</span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-text-primary">
+            <h2 id="leadership-heading" className="text-3xl md:text-4xl font-display font-bold text-center text-text-primary">
               Leadership & Timeline
             </h2>
             <p className="text-sm font-body text-text-muted mt-2 text-center max-w-md">
@@ -87,10 +87,10 @@ export default function Leadership() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Timeline Block */}
         <div className="lg:col-span-8 relative pl-8 border-l border-border space-y-10">
-          {timeline.map((item, idx) => {
+          {timeline.map((item) => {
             const Icon = item.icon;
             return (
-              <ScrollReveal key={idx} delay={0.1 * idx} x={-20} duration={0.8}>
+              <ScrollReveal key={item.role} delay={0.1} x={-20} duration={0.8}>
                 <div className="relative group pl-2">
                   {/* Timeline point dot - Centered perfectly on the line */}
                   <div className="absolute -left-[45px] top-1.5 w-[34px] h-[34px] bg-background border border-border group-hover:border-accent-primary text-text-muted group-hover:text-accent-primary rounded-full flex items-center justify-center transition-all duration-300 shadow-sm">
@@ -126,8 +126,8 @@ export default function Leadership() {
               </h3>
               
               <div className="space-y-5">
-                {awards.map((award, idx) => (
-                  <div key={idx} className="flex gap-3 border-b border-border/40 last:border-0 pb-4 last:pb-0">
+                {awards.map((award) => (
+                  <div key={award.title} className="flex gap-3 border-b border-border/40 last:border-0 pb-4 last:pb-0">
                     <div className="p-2 rounded bg-background border border-border text-accent-yellow shrink-0 self-start">
                       <Trophy className="w-3.5 h-3.5" />
                     </div>
