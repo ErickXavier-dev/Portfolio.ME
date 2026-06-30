@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ChevronUp, Github, Linkedin, Mail, ArrowUpRight, Twitter, Instagram } from "lucide-react";
+import { version } from "../package.json";
 
 export default function Footer() {
   const [emailLink, setEmailLink] = useState("");
@@ -13,6 +14,13 @@ export default function Footer() {
     const email = parts.join("@");
     setEmailLink(`mailto:${email}`);
     setVisibleEmail(email);
+
+    // Developer Easter egg log
+    console.log(
+      `%c Erick Xavier Portfolio v${version} %c https://github.com/ErickXavier-dev/Portfolio.ME `,
+      "color: #fff; background: #6c63ff; padding: 5px 0; border-radius: 5px 0 0 5px; font-weight: bold;",
+      "color: #6c63ff; background: #1e1e3f; padding: 5px 0; border-radius: 0 5px 5px 0;"
+    );
   }, []);
 
   const scrollToTop = () => {
@@ -208,9 +216,14 @@ export default function Footer() {
             <ChevronUp className="w-4 h-4 stroke-[3px]" />
           </button>
           
-          <p className="text-xs font-mono text-text-muted">
-            &copy; 2026 Erick Xavier · All rights reserved.
-          </p>
+          <div className="flex flex-col items-center md:items-end gap-0.5">
+            <p className="text-xs font-mono text-text-muted">
+              &copy; 2026 Erick Xavier · All rights reserved.
+            </p>
+            <p className="text-[10px] font-mono text-text-muted/50">
+              v{version}
+            </p>
+          </div>
         </div>
       </div>
     </footer>
